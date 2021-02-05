@@ -14,11 +14,17 @@ app = Flask(__name__)
 # Put your routes below this comment
 '''
 
-# The first route
+# The first route/page
 @app.route('/')
 def home():
     return 'My home page'
 
+# The about route/page
+@app.route('/about')
+def about():
+    return render_template('about.html')
+
+# The default route/page - unknown urls lead here
 @app.errorhandler(404)
 def page_not_found(error):
     """Custom 404 page."""
